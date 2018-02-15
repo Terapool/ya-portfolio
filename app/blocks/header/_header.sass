@@ -24,14 +24,15 @@
     
   &-intro
     width: $s1HeaderCol2W + $s1HeaderIndent-02
-    max-heigth: $s1HeaderH
+    height: $s1HeaderH
     display: flex
     overflow: hidden
     @media screen and (max-width: $s1)
       width: $s2HeaderCol2W + $s2HeaderIndent-02
-      max-heigth: $s2HeaderH
+      height: $s2HeaderH
     @media screen and (max-width: $s2)
       width: $s3HeaderColW
+      height: $s3HeaderH
       
     &-text
       width: $s1HeaderCol2W
@@ -48,12 +49,17 @@
         font-size: 40px
         font-family: $family-01
         line-height: 48px
+        font-weight: bold
+        margin-top: 65px
         @media screen and (max-width: $s2)
           text-align: center
         @media screen and (max-width: $s3)
           font-size: 32px
           line-height: 40px
-          
+          margin-top: 97px
+        @media screen and (max-width: $s3)
+          margin-top: 33px
+        
         &_small
           font-size: 24px
           line-height: 29px

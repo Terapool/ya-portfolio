@@ -15,40 +15,78 @@ $s4: $s4w + $delta // Screen setpoint no 4
 
 // Colors
 
-$color-00: #FFFFFF;
+$color-00: #FFFFFF
 $color-01: #082841
+$color-02: #000000;
+
 
 
 //Fonts
 
 $family-01: Helvetica, Geneva, Arial, sans-serif
-$family-02: Georgia, 'Times New Roman', Times, serif;
+$family-02: Georgia, 'Times New Roman', Times, serif; //default
 
 // Parameters
 
 //s1
+
+    //Header
 $s1HeaderH: 672px     
 $s1HeaderColW: 552px  //Header Width = --ColW (photo)-- + --Indent-01-- + --Col2W- (text) - + --Indent-02--
 $s1HeaderIndent-01: 96px
 $s1HeaderCol2W: 544px
 $s1HeaderIndent-02: 248px
 
-//s2
 
+    
+$s1w2: 944px // Container width
+
+//credo
+$s1CredoItemH: 215px
+$s1CredoItemPadding: 30px
+$s1CredoItemSpace: 15px
+
+$s1CredoItem1W: 545px
+$s1CredoItem2W: 384px
+$s1CredoItem3W: 305px
+$s1CredoItem4W: 624px
+
+
+
+
+//s2
+//header
 $s2HeaderH: 768px     
 $s2HeaderColW: 424px  //Header Width = --ColW (photo)-- + --Indent-01-- + --Col2W- (text) - + --Indent-02--
 $s2HeaderIndent-01: 95px
 $s2HeaderCol2W: 464px
 $s2HeaderIndent-02: 41px
 
+
+$s2w2: $s1w2
+
+
+
+
 // s3
+//   header
+$s3HeaderH: 1024px   
 $s3HeaderColW: 544px // text column
 $s3ImgSize: 384px
+
+$s3w2: 704px // Container width
+
+
+//credo
+
+$s3CredoItem1W: 385px
+$s3CredoItem2W: 304px
+
 
 //s4
 $s4HeaderColW: 305px // text column
 $s4ImgSize: 144px
-
+$s4w: 304px
 
 
 
@@ -57,3 +95,4 @@ $s4ImgSize: 144px
 
 @import "page-structure"
 @import "header/header"
+@import "credo/credo"
