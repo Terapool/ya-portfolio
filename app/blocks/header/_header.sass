@@ -1,0 +1,102 @@
+.header
+  display: flex
+  justify-content: space-between
+  margin: 0 auto
+  width: $s1w
+  @media screen and (max-width: $s1)
+    width: $s2w
+  @media screen and (max-width: $s2)
+    width: $s3w
+    justify-content: center
+  @media screen and (max-width: $s3)
+    width: $s4w
+    
+  &__photo
+    width: $s1HeaderColW
+    height: $s1HeaderH
+    background: url('../img/terapool-photo.jpg') no-repeat bottom left
+    @media screen and (max-width: $s1)
+      width: $s2HeaderColW
+      height: $s2HeaderH
+      background: url('../img/terapool-photo.jpg') no-repeat top right
+    @media screen and (max-width: $s2)
+      display: none
+    
+  &-intro
+    width: $s1HeaderCol2W + $s1HeaderIndent-02
+    max-heigth: $s1HeaderH
+    display: flex
+    overflow: hidden
+    @media screen and (max-width: $s1)
+      width: $s2HeaderCol2W + $s2HeaderIndent-02
+      max-heigth: $s2HeaderH
+    @media screen and (max-width: $s2)
+      width: $s3HeaderColW
+      
+    &-text
+      width: $s1HeaderCol2W
+      @media screen and (max-width: $s1)
+        width: $s2HeaderCol2W
+      @media screen and (max-width: $s2)
+        width: 100%
+        display: flex
+        flex-direction: column
+        align-items: center
+        
+      &__title
+        color: $color-00;
+        font-size: 40px
+        font-family: $family-01
+        line-height: 48px
+        @media screen and (max-width: $s2)
+          text-align: center
+        @media screen and (max-width: $s3)
+          font-size: 32px
+          line-height: 40px
+          
+        &_small
+          font-size: 24px
+          line-height: 29px
+          @media screen and (max-width: $s3)
+            font-size: 16px
+            line-height: 19px
+          
+      &__photo
+        display: none
+        @media screen and (max-width: $s2)
+          display: block
+          width: $s3ImgSize
+          height: $s3ImgSize
+          background: url('../img/terapool-photo.jpg') top right
+          background-position: -750px -150px
+          border-radius: 100%
+          margin-top: 45px
+        @media screen and (max-width: $s3)
+          width: $s4ImgSize
+          height: $s4ImgSize
+          background: url('../img/terapool-photo.jpg') top right
+          background-size: 200%
+          background-position: -136px -80px
+          margin-top: 21px
+          
+      &__paragraph
+        color: $color-00
+        text-align: left
+        font-size: 20px
+        line-height: 28px
+        @media screen and (max-width: $s2)
+          text-align: center
+        @media screen and (max-width: $s3)
+          font-size: 16px
+          line-height: 24px
+        
+        &_variant1
+          margin-top: 300px
+          @media screen and (max-width: $s2)
+            margin-top: 79px
+          @media screen and (max-width: $s3)
+            margin-top: 30px
+          
+      
+  
+  

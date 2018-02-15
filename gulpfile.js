@@ -39,7 +39,7 @@ gulp.task('build:assets', () => {
             .pipe(gulp.dest('build/img/gallery'));
 });
 
-gulp.task('build', ['build:html']); // Entry point for build
+gulp.task('build', ['build:html', 'build:sass', 'build:assets']); // Entry point for build
 
 
 gulp.task('build:watch', ()=> {
