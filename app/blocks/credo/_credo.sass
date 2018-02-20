@@ -3,6 +3,8 @@
   margin: 0 auto
   @media screen and (max-width: $s2)
     width: $s3w2
+  @media screen and (max-width: $s3)
+    width: $s4w2
   
   &__title
     font-size: 40px;
@@ -14,45 +16,133 @@
     margin-bottom: 28px
     @media screen and (max-width: $s2) 
       margin-top: 72px
+    @media screen and (max-width: $s3) 
+      font-size: 32px
+      line-height: 40px
     
   &-block
-    display: flex
-    justify-content: space-between
-    flex-wrap: wrap
+    @media screen and (max-width: $s3)
+      width: $s4w2
+      position: relative
     
+    &__input
+      display: none
+        
     
-    &-item
-      height: $s1CredoItemH - 2 * $s1CredoItemPadding
-      padding: $s1CredoItemPadding
-      background-image: linear-gradient(-180deg, #E6F0F0 0%, #E9F0E6 100%)
-      border-radius: 4px
-      margin-bottom: $s1CredoItemSpace
       
-      &_v1
-        width: $s1CredoItem1W - 2 * $s1CredoItemPadding
-        @media screen and (max-width: $s2)
-          width: $s3CredoItem1W - 2 * $s1CredoItemPadding
+    &-slider
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      @media screen and (max-width: $s3)
+        overflow: hidden
+        position: relative
+        width: $s4w2
+        min-height: $s4w2
+        background: #000
         
-      &_v2
-        width: $s1CredoItem2W - 2 * $s1CredoItemPadding
-        @media screen and (max-width: $s2)
-          width: $s3CredoItem2W - 2 * $s1CredoItemPadding
-      &_v3
-        width: $s1CredoItem3W - 2 * $s1CredoItemPadding
-        @media screen and (max-width: $s2)
-          width: $s3CredoItem1W - 2 * $s1CredoItemPadding
-      &_v4
-        width: $s1CredoItem4W - 2 * $s1CredoItemPadding
-        @media screen and (max-width: $s2)
-          width: $s3CredoItem2W - 2 * $s1CredoItemPadding        
-        
-      &__title
-        font-size: 24px
-        line-height: 29px
-        font-family: $family-01
-        font-weight: bold
       
-      &__paragraph 
-        font-size: 16px
-        line-height: 24px
+      &-item
+        height: $s1CredoItemH - 2 * $s1CredoItemPadding
+        padding: $s1CredoItemPadding
+        background-image: linear-gradient(-180deg, #E6F0F0 0%, #E9F0E6 100%)
+        border-radius: 4px
+        margin-bottom: $s1CredoItemSpace
+        @media screen and (max-width: $s3) 
+          border-radius: 0
+          position: absolute
+          height: $s4w2
+          opacity: 0
+          position: absolute
+          z-index: 0
+          transform: scale(1.5)
+          transition: transform ease-in-out .5s, opacity ease-in-out .5s
         
+        &_v1
+          width: $s1CredoItem1W - 2 * $s1CredoItemPadding
+          @media screen and (max-width: $s2)
+            width: $s3CredoItem1W - 2 * $s1CredoItemPadding
+          @media screen and (max-width: $s3)
+            width: $s4w2
+            height: $s4w2
+          
+        &_v2
+          width: $s1CredoItem2W - 2 * $s1CredoItemPadding
+          @media screen and (max-width: $s2)
+            width: $s3CredoItem2W - 2 * $s1CredoItemPadding
+          @media screen and (max-width: $s3)
+            width: $s4w2
+            height: $s4w2
+            
+        &_v3
+          width: $s1CredoItem3W - 2 * $s1CredoItemPadding
+          @media screen and (max-width: $s2)
+            width: $s3CredoItem1W - 2 * $s1CredoItemPadding
+          @media screen and (max-width: $s3)
+            width: $s4w2
+            height: $s4w2
+            
+        &_v4
+          width: $s1CredoItem4W - 2 * $s1CredoItemPadding
+          @media screen and (max-width: $s2)
+            width: $s3CredoItem2W - 2 * $s1CredoItemPadding 
+          @media screen and (max-width: $s3)
+            width: $s4w2
+            height: $s4w2
+        
+        &__title
+          font-size: 24px
+          line-height: 29px
+          font-family: $family-01
+          font-weight: bold
+      
+        &__paragraph 
+          font-size: 16px
+          line-height: 24px
+          margin-top: 30px
+          @media screen and (max-width: $s3)
+            width: $s4w2 - 2 * $s1CredoItemPadding
+        
+    &-controls
+      position: absolute
+      left: 170px
+      margin-left: -98px
+        display: none
+      @media screen and (max-width: $s3)
+        display: flex
+      
+      &__label
+        cursor: pointer
+        height: 8px
+        margin: 25px 12px 0 16px
+        position: relative
+        width: 8px
+        border-radius: 50%
+        background: $color-03
+        
+        &__label:after
+          content: " "
+          display: block
+          height: 12px
+          left: -4px
+          position: absolute
+          top: -8px
+          width: 12px
+          border-radius: 50%
+          transition: background ease-in-out .5s
+      
+.credo-block-controls__label:hover,
+#credo-block-slide1:checked ~ .credo-block-controls label:nth-of-type(1),
+#credo-block-slide2:checked ~ .credo-block-controls label:nth-of-type(2),
+#credo-block-slide3:checked ~ .credo-block-controls label:nth-of-type(3),
+#credo-block-slide4:checked ~ .credo-block-controls label:nth-of-type(4),
+  background: $color-02
+  
+#credo-block-slide1:checked ~ .credo-block-slider > .credo-block-slider-item_v1,
+#credo-block-slide2:checked ~ .credo-block-slider > .credo-block-slider-item_v2,
+#credo-block-slide3:checked ~ .credo-block-slider > .credo-block-slider-item_v3,
+#credo-block-slide4:checked ~ .credo-block-slider > .credo-block-slider-item_v4,
+  opacity: 1
+  z-index: 1
+  transform: scale(1)
+
